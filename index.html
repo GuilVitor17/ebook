@@ -9,12 +9,18 @@
     <meta name='robots' content='max-image-preview:large' />
    
     <title>Desperte sua Melhor Versão</title>
+    <link rel="stylesheet" href="./style.css" media="print" onload="this.media='all';">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"> 
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all';">
+       
 
-    <link rel='stylesheet' id='hfe-style-css'
-        href='./style.css'
-        media='all' />
 
 <style>
+    h1 {
+  font-family: 'MinhaFonte', Arial, sans-serif;
+}
+
     /* Estiliza a barra de rolagem */
     ::-webkit-scrollbar {
         width: 4px; /* Largura fina */
@@ -107,9 +113,9 @@
                         <div class="elementor-element elementor-element-41f4faa3 elementor-widget elementor-widget-heading"
                             data-id="41f4faa3" data-element_type="widget" data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <h2 class="elementor-heading-title elementor-size-default" style="text-align: left;">
+                                <h1 class="elementor-heading-title elementor-size-default" style="text-align: left;">
                                     Transforme Sua Vida em 30 Dias: Controle Suas Emoções e Tenha Mais Confiança!
-                                </h2>
+                                </h1>
                             </div>
                         </div>
                         <br>
@@ -256,6 +262,7 @@
                             <div style="position: relative; width: 100%; max-width: 650px; padding-top: 56.25%;">
                                 <iframe 
                                     id="meuVideo" 
+                                    title="video"
                                     class="elementor-video-iframe" 
                                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; border: none;" 
                                     src="https://www.youtube.com/embed/PunuU47uQ6U?rel=0&modestbranding=1&iv_load_policy=3&fs=0&controls=0&disablekb=1" 
@@ -292,45 +299,6 @@
             </div>
         </section>
 
-
-        <script src="https://www.youtube.com/iframe_api"></script>
-
-                            
-        <script>
-            let player;
-        
-            // Função que será chamada quando a API do YouTube for carregada
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('meuVideo', {
-                    events: {
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-        
-            // Função chamada quando o estado do player mudar
-            function onPlayerStateChange(event) {
-                // Verifica se o vídeo terminou
-                if (event.data === YT.PlayerState.ENDED) {
-                    const botaoCompra = document.getElementById("botaoCompra");
-                    const botaum = document.getElementById("botaum");
-        
-                    // Exibe o botão de compra
-                    botaoCompra.style.display = "block";
-                    
-                    // Adiciona a animação no botão
-                    setTimeout(() => {
-                        botaum.classList.add("botao-animado");
-                    }, 300);
-                }
-            }
-        </script>
-        
-                            
-
-
-
-
         <!--  -->
         <section
             class="elementor-section elementor-top-section elementor-element elementor-element-607de004 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -366,7 +334,7 @@
                             data-id="11c3f317" data-element_type="widget"
                             data-widget_type="heading.default">
                             <div class="elementor-widget-container">
-                                <h1 class="elementor-heading-title elementor-size-default" style="text-align: left">DESPERTE SUA MELHOR VERSÃO</h1>
+                                <h2 class="elementor-heading-title elementor-size-default" style="text-align: left">DESPERTE SUA MELHOR VERSÃO</h2>
                             </div>
                         </div>
                         <div style="margin: 10px 30px;" class="elementor-element elementor-element-5e0c8084  elementor-widget elementor-widget-text-editor"
@@ -394,7 +362,7 @@
                                                     <div class="elementor-icon-box-icon">
                                                         <a
                                                             class="elementor-icon elementor-animation-" tabindex="-1">
-                                                            <img  decoding="async" src="./4.png"  style="height: 100px; width: 100px;" alt="img">
+                                                            <img  decoding="async" src="./4.png" loading="lazy"  style="height: 100px; width: 100px;" alt="img">
                                                             </a>
                                                     </div>
 
@@ -430,7 +398,7 @@
                                                     <div class="elementor-icon-box-icon">
                                                         <a
                                                             class="elementor-icon elementor-animation-" tabindex="-1">
-                                                            <img  decoding="async"  src="./5.png" style="height: 100px; width: 100px;" alt="img">
+                                                            <img loading="lazy" decoding="async"  src="./5.png" style="height: 100px; width: 100px;" alt="img">
                                                              </a>
                                                     </div>
 
@@ -466,7 +434,7 @@
                                                     <div class="elementor-icon-box-icon">
                                                         <a
                                                             class="elementor-icon elementor-animation-" tabindex="-1">
-                                                            <img  decoding="async" src="./6.png" style="height: 100px; width: 100px;" alt="emoção" >
+                                                            <img loading="lazy" decoding="async" src="./6.png" style="height: 100px; width: 100px;" alt="emoção" >
                                                             </a>
                                                     </div>
 
@@ -555,7 +523,8 @@
                                             data-widget_type="image.default">
                                             <div class="elementor-widget-container">
                                                 <a href="#comprar">
-                                                    <img  decoding="async" decoding="async"
+                                                    <img  decoding="async"
+                                                    loading="lazy"
                                                         src="./7.png"
                                                         alt="DriedCayennePepper"
                                                         style="width: 300px; height: 200px; border-radius: 20px; object-fit: cover;"
@@ -586,7 +555,7 @@
                                             data-widget_type="image.default">
                                             <div class="elementor-widget-container">
                                                 <a>
-                                                    <img  decoding="async" decoding="async"
+                                                    <img  decoding="async" loading="lazy"
                                                         src="./8.png"
                                                         title="u16547278711907017296fm253fmtautoapp138fJPEG.webp"
                                                         alt="u16547278711907017296fm253fmtautoapp138fJPEG.webp"
@@ -618,7 +587,7 @@
                                             data-widget_type="image.default">
                                             <div class="elementor-widget-container">
                                                 <a href="#comprar">
-                                                    <img  decoding="async" decoding="async"
+                                                    <img  decoding="async" decoding="async" loading="lazy"
                                                     style="width: 300px; height: 200px; border-radius: 20px; object-fit: cover;"
                                                         src="./9.png"
                                                         title="484.jpg" alt="484.jpg" 
@@ -649,7 +618,7 @@
                                             data-widget_type="image.default">
                                             <div class="elementor-widget-container">
                                                 <a>
-                                                    <img  decoding="async" decoding="async"
+                                                    <img  decoding="async" loading="lazy"
                                                         style="width: 300px; height: 200px; border-radius: 20px; object-fit: cover;"
                                                         src="./10.png"
                                                         alt="Peppermint"
@@ -747,7 +716,7 @@
                                             data-id="75c21444" data-element_type="widget"
                                             data-widget_type="image.default">
                                             <div class="elementor-widget-container">
-                                                <img  decoding="async" decoding="async" style="filter: none;" width="1024" height="768"
+                                                <img  decoding="async" loading="lazy" style="filter: none;" width="1024" height="768"
                                                     src="./1.png"
                                                     class="attachment-large size-large wp-image-17" 
                                                     
@@ -829,15 +798,15 @@
             <div class="elementor-container elementor-column-gap-default" style="margin: auto;">
 
                 <div style=" margin: auto; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
-                    <img  decoding="async" style="width: 370px;" src="./depo01.png" alt="depo1" >
-                    <img  decoding="async" style="width: 370px;" src="./depo02.png" alt="depo2" >
-                    <img  decoding="async" style="width: 370px;" src="./depo03.png" alt="depo3" >
-                    <img  decoding="async" style="width: 370px;" src="./depo04.png" alt="depo4" >
-                    <img  decoding="async" style="width: 370px;" src="./depo05.png" alt="depo5" >
-                    <img  decoding="async" style="width: 370px;" src="./depo06.png" alt="depo6" >
-                    <img  decoding="async" style="width: 370px;" src="./depo07.png" alt="depo7" >
-                    <img  decoding="async" style="width: 370px;" src="./depo08.png" alt="depo8" >
-                    <img  decoding="async" style="width: 370px;" src="./depo10.png" alt="depo9" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo01.png" alt="depo1" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo02.png" alt="depo2" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo03.png" alt="depo3" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo04.png" alt="depo4" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo05.png" alt="depo5" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo06.png" alt="depo6" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo07.png" alt="depo7" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo08.png" alt="depo8" >
+                    <img  decoding="async" style="width: 370px;" loading="lazy" src="./depo10.png" alt="depo9" >
                 </div>
             </div>
         </section>
@@ -873,7 +842,7 @@
                         <div style="top: 5px;" class="elementor-element elementor-element-585ed7ca elementor-widget elementor-widget-image"
                             data-id="585ed7ca" data-element_type="widget" data-widget_type="image.default">
                             <div class="elementor-widget-container">
-                                <img  decoding="async" decoding="async" width="333" height="48"
+                                <img  decoding="async" loading="lazy" width="333" height="48"
                                     src="./selos.png"
                                     class="attachment-large size-large wp-image-7" alt="selos"
                                     sizes="(max-width: 333px) 100vw, 333px" 
@@ -962,7 +931,7 @@
                       <span style="font-size: 40px;" class="text-5xl font-semibold tracking-tight text-gray-900">R$29,90</span>
                       <span class="text-base text-gray-500" style="font-size: 19px;"><s>R$ 69,90</s></span>
                     </p>
-                    <img  decoding="async" style=" object-fit: cover; padding: 20px;" src="./produto1.png" alt="produto" >
+                    <img  decoding="async"  decoding="async" style=" object-fit: cover; padding: 20px;" src="./produto1.png" alt="produto" >
 
                     <ul role="list" class="mt-6 space-y-0 text-sm/6 text-gray-600 sm:mt-0">
                       <li class="flex gap-x-3">
@@ -995,7 +964,7 @@
                   <span style="font-size: 19px;" class="text-base text-gray-400"> <s>R$ 89,90</s></span>
                 </p>
                 <p style="color: #fff; font-family: sans-serif; font-weight: bold;" class="mt-6 text-base/7 text-gray-300">Experimente a imersão completa no conteúdo com o eBook e a versão em áudio!</p>
-                <img  decoding="async" style=" object-fit: cover; padding: 0px;" src="./produto2.png" alt="product" >
+                <img  decoding="async" decoding="async" style=" object-fit: cover; padding: 0px;" src="./produto2.png" alt="product" >
                 <ul role="list" class="mt-0 space-y-0 text-sm/3 text-gray-600 sm:mt-0">
                     <li class="flex gap-x-3" style="color: #fff;">
                       <svg style="position: relative; bottom: 5px; color:#B1001D" class="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
@@ -1062,7 +1031,7 @@
                         <div class="elementor-element elementor-element-38b58f12 elementor-widget elementor-widget-image"
                             data-id="38b58f12" data-element_type="widget" data-widget_type="image.default">
                             <div class="elementor-widget-container">
-                                <img  decoding="async"  decoding="async" width="1000" height="1000"
+                                <img  decoding="async"   decoding="async" width="1000" height="1000"
                                     src="https://receitaslowcarbparadiabeticos.net/wp-content/uploads/2023/05/Selo-de-Garantia-de-7-Dias-PNG-Transparente-Sem-Fundo-1-1024x1024.png"
                                     class="attachment-large size-large wp-image-31" alt=""
                                     sizes="(max-width: 1000px) 100vw, 1000px" />
