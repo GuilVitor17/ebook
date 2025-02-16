@@ -203,11 +203,14 @@
                         <a href="#comprar">
 
                             
-                            <div style="display: flex; flex-direction: column; align-items: center;">
-                                <video id="meuVideo" class="elementor-video-iframe" poster="capa.jpg" style="width: 650px; border-radius: 10px;" controls>
+                            <div  style="display: flex; flex-direction: column; align-items: center;">
+                                <!-- <video id="meuVideo" class="elementor-video-iframe" poster="capa.jpg" style="width: 650px; border-radius: 10px;" controls>
                                     <source src="./video.mp4" type="video/mp4">
                                     Seu navegador não suporta a tag de vídeo.
-                                </video>
+                                </video> -->
+
+                                
+                                
                             
                                 <!-- Botão oculto inicialmente -->
                                 <!-- <button  style="display: none; margin-top: 15px; padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
@@ -244,22 +247,32 @@
                                     animation: pulse 1.5s infinite;
                                 }
                             </style>
-                            
-                            <script>
-                                const video = document.getElementById("meuVideo");
-                                const botaoCompra = document.getElementById("botaoCompra");
-                                const botaum = document.getElementById("botaum");
-                            
-                                video.addEventListener("ended", function () {
-                                    botaoCompra.style.display = "block"; // Exibe o botão ao final do vídeo
-                                    setTimeout(() => {
-                                        botaum.classList.add("botao-animado"); // Adiciona animação
-                                    }, 300); // Pequeno delay para suavizar a entrada
-                                });
-                            </script>
 
+                            
                             <!--  -->
                         </a>
+
+                        <div style="display: flex; flex-direction: column; align-items: center; width: 100%; padding: 10px;">
+                            <div style="position: relative; width: 100%; max-width: 650px; padding-top: 56.25%;">
+                                <iframe 
+                                    id="meuVideo" 
+                                    class="elementor-video-iframe" 
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; border: none;" 
+                                    src="https://www.youtube.com/embed/PunuU47uQ6U?rel=0&modestbranding=1&iv_load_policy=3&fs=0&controls=0&disablekb=1" 
+                                    loading="lazy" allowfullscreen>
+                                </iframe>
+                        
+                                <!-- Gradiente superior -->
+                                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 30%;border-radius: 10px; 
+                                            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));">
+                                </div>
+                        
+                                <!-- Gradiente inferior -->
+                                <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 30%; border-radius: 10px;
+                                            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));">
+                                </div>
+                            </div>
+                        </div>
 
                             <h3 id="tier-hobby" class="text-base/7 font-semibold text-indigo-600" style="color: #B1001D;margin: auto; font-family: sans-serif; font-weight: bold; top: 20px; position: relative; margin: 0px 10px; max-width: 450px; margin: auto;">
                                 <div style="width: 100%;flex-direction: row; display: flex; background-color: #B1001D; border-radius: 5px; text-align: center; margin: auto; display: flex; justify-content: center;">
@@ -278,6 +291,46 @@
                 </div>
             </div>
         </section>
+
+
+        <script src="https://www.youtube.com/iframe_api"></script>
+
+                            
+        <script>
+            let player;
+        
+            // Função que será chamada quando a API do YouTube for carregada
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('meuVideo', {
+                    events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+        
+            // Função chamada quando o estado do player mudar
+            function onPlayerStateChange(event) {
+                // Verifica se o vídeo terminou
+                if (event.data === YT.PlayerState.ENDED) {
+                    const botaoCompra = document.getElementById("botaoCompra");
+                    const botaum = document.getElementById("botaum");
+        
+                    // Exibe o botão de compra
+                    botaoCompra.style.display = "block";
+                    
+                    // Adiciona a animação no botão
+                    setTimeout(() => {
+                        botaum.classList.add("botao-animado");
+                    }, 300);
+                }
+            }
+        </script>
+        
+                            
+
+
+
+
         <!--  -->
         <section
             class="elementor-section elementor-top-section elementor-element elementor-element-607de004 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
