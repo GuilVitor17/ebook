@@ -2,6 +2,40 @@
     font-display: swap;
   }
   
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ffcc00; }
+    50% { box-shadow: 0 0 20px #ffcc00; }
+    100% { box-shadow: 0 0 5px #ffcc00; }
+}
+
+.attention-animation {
+    animation: pulse 1s infinite alternate, glow 1.5s infinite alternate;
+}
+
+.elementor-button {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+
+
 /* Navigation Menu CSS */
 
 ul.hfe-nav-menu,
