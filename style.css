@@ -15,9 +15,9 @@
     100% { box-shadow: 0 0 5px #ffcc00; }
 }
 
-.attention-animation {
-    animation: pulse 1s infinite alternate, glow 1.5s infinite alternate;
-}
+/* .attention-animation {
+    animation: pulse 5s infinite alternate, glow 2.0s infinite alternate;
+} */
 
 .elementor-button {
     width: 100%;
