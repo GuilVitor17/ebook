@@ -41,14 +41,14 @@
     justify-content: center;
   }
   .image-container img {
-    width: calc(50% - 10px); /* Define duas imagens por linha */
-    max-width: 100%;
-    height: auto;
+    width: 190px; /* Define duas imagens por linha */
+    height: 300px;
   }
   @media (max-width: 768px) {
     .image-container img {
-      width: 100%; /* Faz com que as imagens fiquem empilhadas em telas menores */
-    }
+        width: 100px; /* Define duas imagens por linha */
+        height: 300px;
+      }
   }
 
   .px-6{
@@ -77,12 +77,7 @@
     flex: 1;
     text-align: center;
 }
-.image-container {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    max-height: 425px;
-}
+
 .image-container img {
     max-width: 100%;
     border-radius: 10px;
