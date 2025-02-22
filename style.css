@@ -15,9 +15,9 @@
     100% { box-shadow: 0 0 5px #ffcc00; }
 }
 
-/* .attention-animation {
-    animation: pulse 5s infinite alternate, glow 2.0s infinite alternate;
-} */
+.attention-animation {
+    animation: pulse 5s infinite alternate, glow 0.5s infinite alternate;
+}
 
 .elementor-button {
     width: 100%;
@@ -37,7 +37,7 @@
 .image-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
   }
   .image-container img {
@@ -95,6 +95,13 @@ h2 {
     color: #27ae60;
     font-weight: bold;
 }
+
+.sm\:mx-8{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
 .buy-button {
     display: inline-block;
     background: #e74c3c;
